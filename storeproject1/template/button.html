@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show/Hide Form</title>
+    <style>
+        .btn3{
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 20px;
+          cursor: pointer;
+          text-decoration:none
+        }
+
+        .btn2{
+          background-color:Red;
+          color: white;
+          padding: 10px 20px;
+          cursor: pointer;
+        }
+
+        /* Hidden form initially */
+        #myForm {
+            display: none;
+        }
+
+        /* Style for the label/button */
+        #showFormLabel {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Hide the checkbox input */
+        #showFormCheckbox {
+            display: none;
+        }
+
+        /* When the checkbox is checked, show the form */
+        #showFormCheckbox:checked ~ #myForm {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<form action="new_page" method="post">
+    {% csrf_token %}
+
+<!--    <label id="showFormLabel" for="showFormCheckbox" >Show Form</label>-->
+<!--    <input type="checkbox" id="showFormCheckbox" >-->
+<a class="btn3" href="{% url 'myapp:form' %}">Show form</a>
+    </form>
+    </body>
+    </html>
